@@ -47,9 +47,9 @@ npm run insert
 > ddb-documentclient-test@0.1.0 insert /Users/xxx/ddb-documentclient-test
 > npx ts-node src/insertdata.ts
 
-Extended Array
+extended array
 {
-  "id": "test1",
+  "id": "extended array",
   "data": {
     "0": {
       "firstName": "momotaro",
@@ -68,9 +68,9 @@ Extended Array
     }
   }
 }
-Raw Array
+raw array
 {
-  "id": "test2",
+  "id": "raw array",
   "data": [
     {
       "firstName": "momotaro",
@@ -88,5 +88,26 @@ Raw Array
       "age": 7
     }
   ]
+}
+converted to raw array from extended array using Array.map()
+{
+  "id": "converted to raw array from extended array using Array.map()",
+  "data": {
+    "0": {
+      "firstName": "momotaro",
+      "lastName": "yamada",
+      "age": 5
+    },
+    "1": {
+      "firstName": "takashi",
+      "lastName": "suzuki",
+      "age": 6
+    },
+    "2": {
+      "firstName": "koichi",
+      "lastName": "sato",
+      "age": 7
+    }
+  }
 }
 ```
