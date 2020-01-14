@@ -59,11 +59,20 @@ const main = async (): Promise<void> => {
     {
       message: 'converted to raw array from extended array using Array.map()',
       data: people.toRawObject()
+    },
+    {
+      message: 'converted to raw array from extended array using new Array(...this)',
+      data: people.toRawObject2()
+    },
+    {
+      message: 'converted to raw array from extended array using JSON.parse(JSON.stringify(this))',
+      data: people.toRawObject3()
     }
   ];
 
   for (const td of testdata) {
     console.log(`Array.isArray(): ${Array.isArray(td.data)}`);
+    console.log(td.data);
     await putAndView(td);
   }
 };

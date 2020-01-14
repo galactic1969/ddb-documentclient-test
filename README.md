@@ -39,7 +39,7 @@ npm run insert
 npm run delete
 ```
 
-## 何が起こるか
+## 結果
 
 ```sh
 npm run insert
@@ -47,7 +47,12 @@ npm run insert
 > ddb-documentclient-test@0.1.0 insert /Users/xxx/ddb-documentclient-test
 > npx ts-node src/insertdata.ts
 
-extended array
+Array.isArray(): true
+People [
+  Person { firstName: 'momotaro', lastName: 'yamada', age: 5 },
+  Person { firstName: 'takashi', lastName: 'suzuki', age: 6 },
+  Person { firstName: 'koichi', lastName: 'sato', age: 7 }
+]
 {
   "id": "extended array",
   "data": {
@@ -68,7 +73,12 @@ extended array
     }
   }
 }
-raw array
+Array.isArray(): true
+[
+  Person { firstName: 'momotaro', lastName: 'yamada', age: 5 },
+  Person { firstName: 'takashi', lastName: 'suzuki', age: 6 },
+  Person { firstName: 'koichi', lastName: 'sato', age: 7 }
+]
 {
   "id": "raw array",
   "data": [
@@ -89,7 +99,12 @@ raw array
     }
   ]
 }
-converted to raw array from extended array using Array.map()
+Array.isArray(): true
+People [
+  Person { firstName: 'momotaro', lastName: 'yamada', age: 5 },
+  Person { firstName: 'takashi', lastName: 'suzuki', age: 6 },
+  Person { firstName: 'koichi', lastName: 'sato', age: 7 }
+]
 {
   "id": "converted to raw array from extended array using Array.map()",
   "data": {
@@ -109,5 +124,57 @@ converted to raw array from extended array using Array.map()
       "age": 7
     }
   }
+}
+Array.isArray(): true
+[
+  Person { firstName: 'momotaro', lastName: 'yamada', age: 5 },
+  Person { firstName: 'takashi', lastName: 'suzuki', age: 6 },
+  Person { firstName: 'koichi', lastName: 'sato', age: 7 }
+]
+{
+  "id": "converted to raw array from extended array using new Array(...this)",
+  "data": [
+    {
+      "firstName": "momotaro",
+      "lastName": "yamada",
+      "age": 5
+    },
+    {
+      "firstName": "takashi",
+      "lastName": "suzuki",
+      "age": 6
+    },
+    {
+      "firstName": "koichi",
+      "lastName": "sato",
+      "age": 7
+    }
+  ]
+}
+Array.isArray(): true
+[
+  { firstName: 'momotaro', lastName: 'yamada', age: 5 },
+  { firstName: 'takashi', lastName: 'suzuki', age: 6 },
+  { firstName: 'koichi', lastName: 'sato', age: 7 }
+]
+{
+  "id": "converted to raw array from extended array using JSON.parse(JSON.stringify(this))",
+  "data": [
+    {
+      "firstName": "momotaro",
+      "lastName": "yamada",
+      "age": 5
+    },
+    {
+      "firstName": "takashi",
+      "lastName": "suzuki",
+      "age": 6
+    },
+    {
+      "firstName": "koichi",
+      "lastName": "sato",
+      "age": 7
+    }
+  ]
 }
 ```

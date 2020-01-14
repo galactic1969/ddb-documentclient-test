@@ -4,8 +4,17 @@ class ExtendedArray<T> extends Array<T> {
 
     return;
   }
+
   toRawObject(): T[] {
     return this.map(item => item);
+  }
+
+  toRawObject2(): T[] {
+    return new Array(...this);
+  }
+
+  toRawObject3(): T[] {
+    return JSON.parse(JSON.stringify(this));
   }
 }
 
