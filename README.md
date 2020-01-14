@@ -47,6 +47,7 @@ npm run insert
 > ddb-documentclient-test@0.1.0 insert /Users/xxx/ddb-documentclient-test
 > npx ts-node src/insertdata.ts
 
+Extended Array
 {
   "id": "test1",
   "data": {
@@ -67,6 +68,7 @@ npm run insert
     }
   }
 }
+Raw Array
 {
   "id": "test2",
   "data": [

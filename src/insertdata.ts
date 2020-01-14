@@ -61,7 +61,11 @@ const main = async () => {
     })
     .promise();
 
+  // Extended Array
+  console.log('Extended Array');
   console.log(JSON.stringify(result1.Item, null, 2));
+  // Raw Array
+  console.log('Raw Array');
   console.log(JSON.stringify(result2.Item, null, 2));
 };
 
