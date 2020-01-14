@@ -1,10 +1,9 @@
 import { DynamoDB } from 'aws-sdk';
-import { DocumentClient } from 'aws-sdk/lib/dynamodb/document_client';
 
 const ddb = new DynamoDB({ region: process.env['AWS_REGION'] });
 const tableName = process.env['DDB_TABLE_NAME'] as string;
 
-const main = async () => {
+const main = async (): Promise<void> => {
   try {
     const table = await ddb
       .describeTable({

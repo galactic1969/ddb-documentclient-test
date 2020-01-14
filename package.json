@@ -5,6 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc": "tsc",
+    "clean": "rm -rf dist/*;",
+    "build": "npm-run-all clean tsc",
     "create": "npx ts-node src/create_db.ts",
     "insert": "npx ts-node src/insertdata.ts",
     "delete": "npx ts-node src/delete_db.ts"

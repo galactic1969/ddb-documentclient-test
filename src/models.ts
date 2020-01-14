@@ -1,8 +1,10 @@
 class ExtendedArray<T> extends Array<T> {
   print(): void {
-    return console.log(this.join(', '));
+    console.log(this.join(', '));
+
+    return;
   }
-  toJsonObject(): T[] {
+  toRawObject(): T[] {
     return this.map(item => item);
   }
 }
@@ -10,7 +12,7 @@ class ExtendedArray<T> extends Array<T> {
 export class Person {
   firstName = '';
   lastName = '';
-  age: number = 0;
+  age = 0;
 
   constructor(init: Person) {
     Object.assign(this, init);

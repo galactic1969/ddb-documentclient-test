@@ -32,11 +32,10 @@ const putAndView = async (testcase: Testcase): Promise<void> => {
     })
     .promise();
 
-  console.log(testcase.message);
   console.log(JSON.stringify(result.Item, null, 2));
 };
 
-const main = async () => {
+const main = async (): Promise<void> => {
   const people = new People(
     new Person({ age: 5, firstName: 'momotaro', lastName: 'yamada' }),
     new Person({ age: 6, firstName: 'takashi', lastName: 'suzuki' }),
@@ -59,11 +58,12 @@ const main = async () => {
     },
     {
       message: 'converted to raw array from extended array using Array.map()',
-      data: people.toJsonObject()
+      data: people.toRawObject()
     }
   ];
 
   for (const td of testdata) {
+    console.log(`Array.isArray(): ${Array.isArray(td.data)}`);
     await putAndView(td);
   }
 };
